@@ -120,9 +120,9 @@ window.onKeyDown = proc(event: KeyboardEvent) =
 
 To get the event key we use: `$event.key`
 
-To get the unicode: `event.unicode`
+To get the unicode: `$event.unicode`
 
-To get the charactere: `event.character`
+To get the charactere: `$event.character`
 
 **Check some key is down**
 
