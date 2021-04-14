@@ -28,8 +28,9 @@ To set width and height of ou window we use the width and height variables from 
 
 ```
 window.width = 600.scaleToDpi
+window.height = 400.scaleToDpi
 ```
-`window.height = 400.scaleToDpi`
+
 
 We can also specify an icon with the `iconPath` variable of our window object, wich should look smth like this `iconPath = "path/to/logo.png"`
 we can use PNG as format for our logo but JPEG should work (I DIDN'T TRYED).
