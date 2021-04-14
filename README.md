@@ -6,4 +6,4 @@ This documentation his not complete, for furthuer informations please take a loo
 
 This is also full of typos
 
-**[START READING](https://github.com/TheFourchette/NiGUI-docs/doc.md)**
+**[START READING](https://github.com/TheFourchette/NiGUI-docs/blob/main/doc.md)**
