@@ -6,13 +6,13 @@ This documentation may not be complete, I made it only using the examples locate
 
 First we obviously import the library
 
-```  
+```nim  
 import nigui
 ```
 
 Then we initialize the app
 
-```
+```nim
 app.init()
 ```
 
@@ -26,7 +26,7 @@ Please note that a window can only contain only ONE control that will be put in 
 
 To set width and height of ou window we use the width and height variables from our window object
 
-```
+```nim
 window.width = 600.scaleToDpi
 window.height = 400.scaleToDpi
 ```
@@ -55,7 +55,7 @@ We also have text areas that let us write text inside of it! Same here we create
 
 If we want our button to add a line to our text area when we click it we use the `button.onClick` event handler. This should look something like this
 
-```
+```nim
 button.onClick = proc(event: ClickEvent) =
   textArea.addLine("Button 1 clicked, message box opened.")
   window.alert("This is a simple message box.")
@@ -68,7 +68,7 @@ To show our window we can use the built-in `window.show()` procedure and the `ap
 ## Detecting when we close the window
 To detect when the window get closed we can use the onCloseClick event handler:
 
-```
+```nim
 window.onCloseClick = proc(event: CloseClickEvent) =
   case window.msgBox("Do you want to quit?", "Quit?", "Quit", "Minimize", "Cancel")
   of 1: window.dispose()
@@ -113,7 +113,7 @@ window.onCloseClick = proc(event: CloseClickEvent) =
 
 ### KeyBoard inputs
 if we want to accept imputs from the keyboard like `CTRL+Q` we need to use an event handler like this:
-```
+```nim
 window.onKeyDown = proc(event: KeyboardEvent) = 
 	do_something()
 ```
@@ -128,7 +128,7 @@ To get the charactere: `$event.character`
 
 To check if, let's say `CTRL + Q`, is down, we check `Key_Q` with the `isDown()` procedure:
 
-```
+```nim
 if Key_Q.isDown() and Key_ControlL.isDown():
 	app.quit()
 ```
@@ -142,7 +142,7 @@ To create a timer will need to variables, one wich will be the timer itself and 
 
 so accordingly
 
-```
+```nim
 var timer: Timer
 var counter = 0
 
@@ -152,18 +152,18 @@ proc timer(event: TimerEvent) =
 
 To start our timer, we call the `startTimer()` proc and pass to it the time to wait in miliseconds and our timer proc
 
-```
+```nim
 mytimer = startTimer(1000, timer)
 ```
 
 We can also start a repeating timer by using the `startRepeatingTimer()` procedure and pass it the same arguments
 
-```
+```nim
 mytimer = startRepeatingTimer(1000, timer)
 ```
 
 To stop our timer we call the `stop()` procedure on our timer object
 
-```
+```nim
 timer.stop()
 ```
