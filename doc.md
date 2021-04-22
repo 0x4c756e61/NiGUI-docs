@@ -89,7 +89,7 @@ window.onCloseClick = proc(event: CloseClickEvent) =
 	+ `XAlign_Left`
 	+ `YAlign_Left`
 - `.width` and `.height` - Set the width and height of the control
-
+- `.fontSize` - Set the font size of the any control having editable text (like buttons), It need to be a float
 **Controls and theire properties**
 
 - `newWindow()` - Create a new window with a title
@@ -134,3 +134,36 @@ if Key_Q.isDown() and Key_ControlL.isDown():
 ```
 
 We quit the app with `app.quit()` when *Q* and *CTRL_left* are both down.
+
+
+**Using timers**
+
+To create a timer will need to variables, one wich will be the timer itself and one for the counter as well as a procedure that will be called when the timer ends
+
+so accordingly
+
+```
+var timer: Timer
+var counter = 0
+
+proc timer(event: TimerEvent) = 
+	echo "Timer ended!"
+```
+
+To start our timer, we call the `startTimer()` proc and pass to it the time to wait in miliseconds and our timer proc
+
+```
+mytimer = startTimer(1000, timer)
+```
+
+We can also start a repeating timer by using the `startRepeatingTimer()` procedure and pass it the same arguments
+
+```
+mytimer = startRepeatingTimer(1000, timer)
+```
+
+To stop our timer we call the `stop()` procedure on our timer object
+
+```
+timer.stop()
+```
