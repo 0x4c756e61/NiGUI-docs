@@ -90,6 +90,7 @@ window.onCloseClick = proc(event: CloseClickEvent) =
 	+ `YAlign_Left`
 - `.width` and `.height` - Set the width and height of the control
 - `.fontSize` - Set the font size of the any control having editable text (like buttons), It need to be a float
+
 **Controls and theire properties**
 
 - `newWindow()` - Create a new window with a title
