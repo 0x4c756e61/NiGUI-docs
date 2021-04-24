@@ -259,6 +259,7 @@ Note that you can use NiGUI to process Images without any GUI, for that you don'
 Sometimes you probably want to use `load and save` files, for that we use file dialogs
 
 **Saving files**
+
 To save files we create a new `save window` object with the `SaveFileDialog()` constructor, we can give it a title with the `.title` property and a default file name with `.defaultName`. Check the `All controls` part of this doc for more properties and stuff
 
 ```nim
@@ -270,6 +271,7 @@ savewindow.run()
 ```
 
 **Loading files**
+
 To load files we create a new `load window` obect with the `newOpenFileDialog()` constructor, like for the `save` windows we can specify it a title and other properties listed in the `All controls` section of this doc
 
 ```nim
@@ -281,6 +283,7 @@ loadw.run()
 ```
 
 **Selecting directory**
+
 To select a direcotry we need to create window with the `SelectDirectoryDialog()` constructor, as for the other dialogs abov we can specify a window title and other properties listed in the `All controls` section of this doc
 
 ```nim
