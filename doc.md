@@ -117,6 +117,23 @@ window.onCloseClick = proc(event: CloseClickEvent) =
 - `newImage()` - Create an Image object
 	+ `.loadFromFile()` - Load an image file from the given path (STRING)
 	+ `.resize()` - Resize the Image
+- `newOpenFileDialog()` - Create an `open file` window object
+	+ `.title`  - Set the window title (STRING)
+	+ `.multiple` - Let the user choose multiple files (BOOLEAN)
+	+ `.directory` - Set a default directory for the window to open in (STRING)
+	+ `.run()` - Run the window
+	+ `.files` - Sequence of files selected (SEQUENCE)
+- `SaveFileDialog()` - Create an `save file` window object
+	+ `.title`  - Set the window title (STRING)
+	+ `defaultName` - Set a default name for the output files
+	+ `.directory` - Set a default directory for the window to open in (STRING)
+	+ `.file` - The file selected
+	+ `.run()` - Run the window
+- `SelectDirectoryDialog()` - Create an `select directory` window object
+	+ `.title`  - Set the window title (STRING)
+	+ `.startDirectory` - Set a default directory for the window to open in (STRING)
+	+ `.selectedDirectory` - The current directory selected
+	+ `.run()` - Run the window
 
 
 **Specials elements and theire properties**
@@ -159,7 +176,7 @@ if Key_Q.isDown() and Key_ControlL.isDown():
 We quit the app with `app.quit()` when *Q* and *CTRL_left* are both down.
 
 
-**Using timers**
+### Timers
 
 To create a timer will need to variables, one wich will be the timer itself and one for the counter as well as a procedure that will be called when the timer ends
 
@@ -191,7 +208,7 @@ To stop our timer we call the `stop()` procedure on our timer object
 timer.stop()
 ```
 
-**Drawing on conrtrols**
+### Drawing on controls
 
 To draw on a control, we well first need one, so to create one we use the `newControl()` constructor
 
@@ -235,3 +252,40 @@ control.onMouseButtonDown = proc (event: MouseEvent) =
 ```
 
 Button is the button that was clicked, x and y are the coordinates of the click
+
+Note that you can use NiGUI to process Images without any GUI, for that you don't need to wait for the draw event. You just need to take the canvas of any image object. For more informations please take a look at the [image processing exepmple](https://github.com/trustable-code/NiGui/blob/master/examples/example_11_image_processing_cli.nim)
+
+### File dialogs
+Sometimes you probably want to use `load and save` files, for that we use file dialogs
+
+**Saving files**
+To save files we create a new `save window` object with the `SaveFileDialog()` constructor, we can give it a title with the `.title` property and a default file name with `.defaultName`. Check the `All controls` part of this doc for more properties and stuff
+
+```nim
+
+var savewindow = SaveFileDialog()
+savewindow.title = "Save file"
+savewindow.defaultName = "My document.txt"
+savewindow.run()
+```
+
+**Loading files**
+To load files we create a new `load window` obect with the `newOpenFileDialog()` constructor, like for the `save` windows we can specify it a title and other properties listed in the `All controls` section of this doc
+
+```nim
+
+var loadw = newOpenFileDialog()
+loadw.title = "Load file"
+loadw.multiple = true
+loadw.run()
+```
+
+**Selecting directory**
+To select a direcotry we need to create window with the `SelectDirectoryDialog()` constructor, as for the other dialogs abov we can specify a window title and other properties listed in the `All controls` section of this doc
+
+```nim
+
+var selector = SelectDirectoryDialog()
+loadw.title = "Open directory"
+loadw.run()
+```
