@@ -63,9 +63,11 @@ button.onClick = proc(event: ClickEvent) =
 ```
 
 **Showing our window and running the app**
+
 To show our window we can use the built-in `window.show()` procedure and the `app.run()` to run main loop of the app
 
 ## Detecting when we close the window
+
 To detect when the window get closed we can use the onCloseClick event handler:
 
 ```nim
