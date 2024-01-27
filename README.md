@@ -1,3 +1,6 @@
+# Archiving notice
+I lost intest in programming in NIM and as such I won't udate this docs. What's written here may still work, but it is really outdated.
+
 # NiGUI-docs
 My custom and poorly made docs for the NiGUI framework
 
